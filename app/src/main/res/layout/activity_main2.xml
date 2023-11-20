@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/txt_name"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_rem"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@color/teal_700"
+            android:onClick="remove"
+            android:text="Удалить"
+            android:textAlignment="center"
+            android:textColor="@color/teal_700"
+            android:textStyle="bold"
+            android:visibility="invisible" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/ed_txt"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:background="@color/purple_700"
+            android:paddingStart="10dp"
+            android:textColor="#070707"
+            android:textStyle="bold"
+            />
+
+         <Button
+            android:id="@+id/btn_add"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@color/purple_700"
+            android:onClick="add"
+            android:text="Добавить"
+            android:textAlignment="center"
+            android:textColor="@color/teal_700"
+            android:textStyle="bold"
+            tools:ignore="TextContrastCheck" />
+          </LinearLayout>
+
+     <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="210dp"
+        android:layout_marginBottom="1dp"
+        android:background="#F43636"
+        android:choiceMode="multipleChoice"
+        android:dividerHeight="5.0sp"
+        android:textColor="#2BA3A3"
+        android:textStyle="bold"
+
+        />
+
+      
+
+    </RelativeLayout>
