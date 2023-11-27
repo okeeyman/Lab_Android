@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,11 +25,11 @@ public class MainActivity extends AppCompatActivity {
         editPass = findViewById(R.id.ed_pass);
         btn_singIn = findViewById(R.id.singIn);
 
-        String true_log = "Пользователь";
-        String true_pass = "Пароль";
+        String true_log = "sss";
+        String true_pass = "sss";
 
-        editLog.setText(true_log);
-        editPass.setText(true_pass);
+        editLog.setHint("Пользователь");
+        editPass.setHint("Пароль");
 
         if (savedInstanceState != null) {
 // Восстановление значений полей при повороте экрана
@@ -40,17 +41,25 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 int status = 0;
-//if(editLog.getText().toString().equals(true_log))
-                status++;
-                if (editPass.getText().toString().equals(true_pass))
+
+                if(editLog.getText().toString().equals(true_log)) {
                     status++;
+                }
+                if (editPass.getText().toString().equals(true_pass)) {
+                    status++;
+                }
+
                 if (status == 2) {
                     Intent intent = new Intent(MainActivity.this, MainActivity2.class);
                     intent.putExtra("log", editLog.getText().toString());
                     startActivity(intent);
                 }
+                else {
+                    Toast.makeText(MainActivity.this, "Неверный логин или пароль!", Toast.LENGTH_LONG).show();
+                }
                 editLog.setText("");
                 editPass.setText("");
+
             }
         });
     }
